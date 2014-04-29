@@ -6,6 +6,7 @@ gem 'rails', '4.0.2'
 gem 'pg'
 gem 'sass-rails', '~> 4.0.0'
 gem 'bootstrap-sass' # JS Bootstrap library support
+gem 'bootstrap-sass-extras'
 gem 'font-awesome-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
@@ -18,11 +19,19 @@ group :doc do
 end
 
 group :development, :test do
-  gem 'cucumber-rails', :require => false
-  gem 'database_cleaner'
   gem 'rspec-rails'
+  gem 'capybara' # Simulates user actions for cucumber
+  gem 'cucumber-rails', :require => false # Cucmber features
+  gem 'capybara-webkit'  # Headless driver for capybara
+  gem 'selenium-webdriver' # Headful driver for capybara
+  gem 'poltergeist'  # yet another headless driver for capybara
+  gem 'webrat'  # Another Headless driver for capybara
+  gem 'launchy' # Opens capybara response in your browser on save_and_open_page
+  gem 'database_cleaner'  # Provides strategies for cleaning up the test db after test runs
+  gem 'zeus', '0.13.4.pre2' # rails preloading environment (the only ver that works with RubyMine)
+  gem 'webmock' # mocking external net connections
+  gem 'delorean' #Time jumping
   gem 'better_errors'
-  gem 'launchy'
 end
 
 group :production do

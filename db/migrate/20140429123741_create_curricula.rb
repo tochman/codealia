@@ -1,6 +1,6 @@
-class CreateCurriculums < ActiveRecord::Migration
+class CreateCurricula < ActiveRecord::Migration
   def change
-    create_table :curriculums do |t|
+    create_table :curricula do |t|
       t.string :title
       t.text :desc
       t.text :goals

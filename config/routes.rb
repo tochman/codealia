@@ -1,6 +1,8 @@
 Codealia::Application.routes.draw do
 
 
+ resources :curriculum, format: false
+
   root "static_pages#index"
   get '/about', to: 'static_pages#about', as: 'about'
   # get '/instructors', to: 'static_pages#instructors'
